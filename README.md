@@ -22,26 +22,26 @@ Download the following datasets and unzip them into `data` folder.
 
 * [MSRA-B and HKU-IS](https://drive.google.com/open?id=1immMDAPC9Eb2KCtGi6AdfvXvQJnSkHHo) dataset. The .lst file for training is `data/msrab_hkuis/msrab_hkuis_train_no_small.lst`.
 * [DUTS](https://drive.google.com/open?id=14RA-qr7JxU6iljLv6PbWUCQG0AJsEgmd) dataset. The .lst file for training is `data/DUTS/DUTS-TR/train_pair.lst`.
+* [Datasets for testing](https://drive.google.com/open?id=1eB-59cMrYnhmMrz7hLWQ7mIssRaD-f4o)
 
 ### 3. Download the pre-trained models
-
 
 Download the following [pre-trained models](https://drive.google.com/open?id=1Q2Fg2KZV8AzNdWNjNgcavffKJBChdBgy) into `data/pretrained` folder. (Now we only provide models trained w/o edge)
 
 ### 5. Train
 
-1. Set the `root` and `source` path in the `dataset/dataset.py` correctly.
+1. Set the `--train_root` and `--train_list` path in `train.sh` correctly.
 
 2. We demo using ResNet-50 as network backbone and train with a initial lr of 5e-5 for 24 epoches, which is divided by 10 after 15 epochs.
 ```shell
-python main_1task.py --arch resnet # you can optionly change the -lr and -wd params
+./train.sh
 ```
 
 3. After training the result model will be stored under `results/run-*` folder.
 
 ### 6. Test
 
-For single dataset testing: `*` changes accordingly and `--sal_mode` indicates different datasets (details can be found in `dataset/dataset.py`)
+For single dataset testing: `*` changes accordingly and `--sal_mode` indicates different datasets (details can be found in `main.py`)
 ```shell
 python main.py --mode='test' --model='results/run-*/models/final.pth' --test_fold='results/run-*-sal-e' --sal_mode='e'
 ```

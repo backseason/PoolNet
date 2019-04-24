@@ -19,16 +19,10 @@ def get_test_info(sal_mode='e'):
     elif sal_mode == 's':
         image_root = './data/SOD/Imgs/'
         image_source = './data/SOD/test.lst'
-    elif sal_mode == 'm':
-        image_root = './data/MSRA/Imgs/'
-        image_source = './data/MSRA/test.lst'
-    elif sal_mode == 'o':
-        image_root = './data/SOC/Imgs/'
-        image_source = './data/SOC/test.lst'
     elif sal_mode == 't':
         image_root = './data/DUTS-TE/Imgs/'
         image_source = './data/DUTS-TE/test.lst'
-    elif sal_mode == 'm_r':
+    elif sal_mode == 'm_r': # for speed test
         image_root = './data/MSRA/Imgs_resized/'
         image_source = './data/MSRA/test_resized.lst'
 
@@ -38,7 +32,7 @@ def main(config):
     if config.mode == 'train':
         train_loader = get_loader(config.batch_size, num_thread=config.num_thread)
         run = 0
-        while os.path.exists("%s/run-%d" % (config.save_folder, run)): 
+        while os.path.exists("%s/run-%d" % (config.save_folder, run)):
             run += 1
         os.mkdir("%s/run-%d" % (config.save_folder, run))
         os.mkdir("%s/run-%d/models" % (config.save_folder, run))
@@ -91,12 +85,12 @@ if __name__ == '__main__':
     parser.add_argument('--mode', type=str, default='train', choices=['train', 'test'])
     config = parser.parse_args()
 
-    if not os.path.exists(config.save_folder): 
+    if not os.path.exists(config.save_folder):
         os.mkdir(config.save_folder)
-    
+
     # Get test set info
     test_root, test_list = get_test_info(config.sal_mode)
     config.test_root = test_root
     config.test_list = test_list
-    
+
     main(config)
