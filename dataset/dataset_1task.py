@@ -54,12 +54,6 @@ class ImageDataTest(data.Dataset):
         elif sal_mode == 's':
             self.image_root = './data/SOD/Imgs/'
             self.image_source = './data/SOD/test.lst'
-        elif sal_mode == 'm':
-            self.image_root = './data/MSRA/Imgs/'
-            self.image_source = './data/MSRA/test.lst'
-        elif sal_mode == 'o':
-            self.image_root = './data/SOC/Imgs/'
-            self.image_source = './data/SOC/test.lst'
         elif sal_mode == 't':
             self.image_root = './data/DUTS-TE/Imgs/'
             self.image_source = './data/DUTS-TE/test.lst'
