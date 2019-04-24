@@ -60,8 +60,12 @@ We provide the pre-trained model, pre-computed saliency maps and evaluation resu
 
 Note：
 
-1. only support `bath_size=1`
+only support `bath_size=1`
 
+## Todo
+
+1. Merge DSS into this repo.
+2. Update the codes and models for joint training with edge.
 
 ### If you think this work is helpful, please cite
 ```latex
