@@ -46,10 +46,7 @@ class Solver(object):
         self.net.eval()  # use_global_stats = True
         self.net.apply(weights_init)
         if self.config.load == '':
-            #if self.config.arch == 'vgg':
             self.net.base.load_pretrained_model(torch.load(self.config.pretrained_model))
-            #elif self.config.arch == 'resnet':
-            #    self.net.base.load_pretrained_model(torch.load(self.config.resnet))
         else: 
             self.net.load_state_dict(torch.load(self.config.load))
 
