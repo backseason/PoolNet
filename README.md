@@ -62,7 +62,11 @@ Note：
 
 1. only support `bath_size=1`
 
-### 7. Wants to participate in the project? Please email {j04.liu, andrewhoux}@gmail.com
+### 7. Wants to participate in the project? 
+
+You are welcome to send us your network to make this project bigger.
+
+Please email {j04.liu, andrewhoux}@gmail.com.
 
 
 ### If you think this work is helpful, please cite
