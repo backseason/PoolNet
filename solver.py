@@ -13,15 +13,15 @@ import cv2
 import math
 import time
 
-lr_decay_epoch = [15]
-nAveGrad = 10  # Update the weights once in 'nAveGrad' forward passes
-showEvery = 200 # Print frequency
 
 class Solver(object):
     def __init__(self, train_loader, test_loader, config):
         self.train_loader = train_loader
         self.test_loader = test_loader
         self.config = config
+        self.iter_size = config.iter_size
+        self.show_every = config.show_every
+        self.lr_decay_epoch = [15,]
         self.build_model()
         if config.mode == 'test':
             print('Loading pre-trained model from %s...' % self.config.model)
@@ -46,11 +46,9 @@ class Solver(object):
         self.net.eval()  # use_global_stats = True
         self.net.apply(weights_init)
         if self.config.load == '':
-            if self.config.arch == 'vgg':
-                self.net.base.load_pretrained_model(torch.load(self.config.vgg))
-            elif self.config.arch == 'resnet':
-                self.net.base.load_pretrained_model(torch.load(self.config.resnet))
-        if self.config.load != '': self.net.load_state_dict(torch.load(self.config.load))
+            self.net.base.load_pretrained_model(torch.load(self.config.pretrained_model))
+        else: 
+            self.net.load_state_dict(torch.load(self.config.load))
 
         self.lr = self.config.lr
         self.wd = self.config.wd
@@ -95,20 +93,20 @@ class Solver(object):
 
                 sal_pred = self.net(sal_image)
                 sal_loss_fuse = F.binary_cross_entropy_with_logits(sal_pred, sal_label, reduction='sum')
-                sal_loss = sal_loss_fuse / (nAveGrad * self.config.batch_size)
+                sal_loss = sal_loss_fuse / (self.iter_size * self.config.batch_size)
                 r_sal_loss += sal_loss.data
 
                 sal_loss.backward()
 
                 aveGrad += 1
 
-                # Update the weights once in p['nAveGrad'] forward passes
-                if aveGrad % nAveGrad == 0:
+                # accumulate gradients as done in DSS
+                if aveGrad % self.iter_size == 0:
                     self.optimizer.step()
                     self.optimizer.zero_grad()
                     aveGrad = 0
 
-                if i % (showEvery // self.config.batch_size) == 0:
+                if i % (self.show_every // self.config.batch_size) == 0:
                     if i == 0:
                         x_showEvery = 1
                     print('epoch: [%2d/%2d], iter: [%5d/%5d]  ||  Sal : %10.4f' % (
@@ -119,7 +117,7 @@ class Solver(object):
             if (epoch + 1) % self.config.epoch_save == 0:
                 torch.save(self.net.state_dict(), '%s/models/epoch_%d.pth' % (self.config.save_fold, epoch + 1))
 
-            if epoch in lr_decay_epoch:
+            if epoch in self.lr_decay_epoch:
                 self.lr = self.lr * 0.1
                 self.optimizer = Adam(filter(lambda p: p.requires_grad, self.net.parameters()), lr=self.lr, weight_decay=self.wd)
 
