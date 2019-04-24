@@ -22,13 +22,13 @@ Download the following datasets and unzip them into `data` folder.
 
 * [MSRA-B and HKU-IS](https://drive.google.com/open?id=1immMDAPC9Eb2KCtGi6AdfvXvQJnSkHHo) dataset. The .lst file for training is `data/msrab_hkuis/msrab_hkuis_train_no_small.lst`.
 * [DUTS](https://drive.google.com/open?id=14RA-qr7JxU6iljLv6PbWUCQG0AJsEgmd) dataset. The .lst file for training is `data/DUTS/DUTS-TR/train_pair.lst`.
-* [Datasets for testing](https://drive.google.com/open?id=1eB-59cMrYnhmMrz7hLWQ7mIssRaD-f4o)
+* [Datasets for testing](https://drive.google.com/open?id=1eB-59cMrYnhmMrz7hLWQ7mIssRaD-f4o).
 
-### 3. Download the pre-trained models
+### 3. Download the pre-trained models for backbone
 
 Download the following [pre-trained models](https://drive.google.com/open?id=1Q2Fg2KZV8AzNdWNjNgcavffKJBChdBgy) into `data/pretrained` folder. (Now we only provide models trained w/o edge)
 
-### 5. Train
+### 4. Train
 
 1. Set the `--train_root` and `--train_list` path in `train.sh` correctly.
 
@@ -39,7 +39,7 @@ Download the following [pre-trained models](https://drive.google.com/open?id=1Q2
 
 3. After training the result model will be stored under `results/run-*` folder.
 
-### 6. Test
+### 5. Test
 
 For single dataset testing: `*` changes accordingly and `--sal_mode` indicates different datasets (details can be found in `main.py`)
 ```shell
@@ -53,7 +53,7 @@ For all datasets testing used in our paper: `2` indicates the gpu to use
 All results saliency maps will be stored under `results/run-*-sal-*` folders in .png formats.
 
 
-### 7. Pre-trained models, pre-computed results and evaluation results
+### 6. Pre-trained models, pre-computed results and evaluation results
 
 We provide the pre-trained model, pre-computed saliency maps and evaluation results of our PoolNet-ResNet50 w/o edge model [run-0](https://drive.google.com/open?id=12Zgth_CP_kZPdXwnBJOu4gcTyVgV2Nof).
 
