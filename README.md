@@ -73,11 +73,14 @@ Note：
 }
 ```
 ```latex
-@article{hou2019deeply,
-  title={Deeply Supervised Salient Object Detection with Short Connections.},
-  author={Hou, Qibin and Cheng, Ming-Ming and Hu, Xiaowei and Borji, Ali and Tu, Zhuowen and Torr, Philip HS},
-  journal={IEEE transactions on pattern analysis and machine intelligence},
-  year={2019}
+@article{HouPami19Dss,
+  title={Deeply Supervised Salient Object Detection with Short Connections},
+  author={Hou, Qibin and Cheng, Ming-Ming and Hu, Xiaowei and Borji, Ali and Tu, Zhuowen and Torr, Philip},
+  year  = {2019},
+  volume={41}, 
+  number={4}, 
+  pages={815-828}, 
+  journal={IEEE TPAMI}
 }
 ```
 
