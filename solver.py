@@ -47,7 +47,7 @@ class Solver(object):
         self.net.apply(weights_init)
         if self.config.load == '':
             self.net.base.load_pretrained_model(torch.load(self.config.pretrained_model))
-        else: 
+        else:
             self.net.load_state_dict(torch.load(self.config.load))
 
         self.lr = self.config.lr
@@ -115,13 +115,13 @@ class Solver(object):
                     r_sal_loss= 0
 
             if (epoch + 1) % self.config.epoch_save == 0:
-                torch.save(self.net.state_dict(), '%s/models/epoch_%d.pth' % (self.config.save_fold, epoch + 1))
+                torch.save(self.net.state_dict(), '%s/models/epoch_%d.pth' % (self.config.save_folder, epoch + 1))
 
             if epoch in self.lr_decay_epoch:
                 self.lr = self.lr * 0.1
                 self.optimizer = Adam(filter(lambda p: p.requires_grad, self.net.parameters()), lr=self.lr, weight_decay=self.wd)
 
-        torch.save(self.net.state_dict(), '%s/models/final.pth' % self.config.save_fold)
+        torch.save(self.net.state_dict(), '%s/models/final.pth' % self.config.save_folder)
 
 def bce2d(input, target, reduction=None):
     assert(input.size() == target.size())
