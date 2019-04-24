@@ -30,7 +30,7 @@ def get_test_info(sal_mode='e'):
 
 def main(config):
     if config.mode == 'train':
-        train_loader = get_loader(config.batch_size, num_thread=config.num_thread)
+        train_loader = get_loader(config)
         run = 0
         while os.path.exists("%s/run-%d" % (config.save_folder, run)):
             run += 1
@@ -40,7 +40,8 @@ def main(config):
         train = Solver(train_loader, None, config)
         train.train()
     elif config.mode == 'test':
-        test_loader = get_loader(config.batch_size, mode='test',num_thread=config.num_thread, sal_mode=config.sal_mode)
+        config.test_root, config.test_list = get_test_info(config.sal_mode)
+        test_loader = get_loader(config, mode='test')
         if not os.path.exists(config.test_fold): os.mkdir(config.test_fold)
         test = Solver(None, test_loader, config)
         test.test()
