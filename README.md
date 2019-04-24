@@ -7,6 +7,11 @@
 - [Pytorch 0.4.1+](http://pytorch.org/)
 - [torchvision](http://pytorch.org/)
 
+## Todo
+
+1. Merge DSS into this repo.
+2. Update the codes and models for joint training with edge.
+
 ## Usage
 
 ### 1. Clone the repository
