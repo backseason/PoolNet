@@ -4,7 +4,7 @@ from torch.nn import utils, functional as F
 from torch.optim import Adam
 from torch.autograd import Variable
 from torch.backends import cudnn
-from networks.poolnet_1task import build_model, weights_init
+from networks.poolnet import build_model, weights_init
 import scipy.misc as sm
 import numpy as np
 import os
