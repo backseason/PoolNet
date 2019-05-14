@@ -59,7 +59,7 @@ if __name__ == '__main__':
     parser.add_argument('--n_color', type=int, default=3)
     parser.add_argument('--lr', type=float, default=5e-5) # Learning rate resnet:5e-5, vgg:1e-4
     parser.add_argument('--wd', type=float, default=0.0005) # Weight decay
-    parser.add_argument('--cuda', type=bool, default=True)
+    parser.add_argument('--no-cuda', dest='cuda', action='store_false')
 
     # Training settings
     parser.add_argument('--arch', type=str, default='resnet') # resnet or vgg
