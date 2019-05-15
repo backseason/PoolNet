@@ -35,7 +35,7 @@ Download the following datasets and unzip them into `data` folder.
 
 ### 3. Download the pre-trained models for backbone
 
-Download the following [pre-trained models](https://drive.google.com/open?id=1Q2Fg2KZV8AzNdWNjNgcavffKJBChdBgy) into `data/pretrained` folder. (Now we only provide models trained w/o edge)
+Download the following [pre-trained models](https://drive.google.com/open?id=1Q2Fg2KZV8AzNdWNjNgcavffKJBChdBgy) into `dataset/pretrained` folder. (Now we only provide models trained w/o edge)
 
 ### 4. Train
 
