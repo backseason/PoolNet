@@ -10,6 +10,7 @@
 ## Update
 
 We released our code for joint training with edge, which is also our best performance model.
+You may refer to this repo for results evaluation: [SalMetric](https://github.com/Andrew-Qibin/SalMetric).
 
 ## Todo
 
