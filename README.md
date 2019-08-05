@@ -79,7 +79,8 @@ All results saliency maps will be stored under `results/run-*-sal-*` folders in 
 We provide the pre-trained model, pre-computed saliency maps and evaluation results for:
 1. PoolNet-ResNet50 w/o edge model [run-0](https://drive.google.com/open?id=12Zgth_CP_kZPdXwnBJOu4gcTyVgV2Nof).
 2. PoolNet-ResNet50 w/ edge model (best performance) [run-1](https://drive.google.com/open?id=1sH5RKEt6SnG33Z4sI-hfLs2d21GmegwR).
-2. PoolNet-VGG16 w/ edge model (pre-computed maps) [run-2](https://drive.google.com/open?id=1jbNyNUJFZPb_jhwkm_D70gsxXgbbv_S1).
+3. PoolNet-VGG16 w/ edge model (pre-computed maps) [run-2](https://drive.google.com/open?id=1jbNyNUJFZPb_jhwkm_D70gsxXgbbv_S1).
+
 Note：
 
 1. only support `bath_size=1`
