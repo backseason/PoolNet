@@ -36,7 +36,7 @@ Download the following datasets and unzip them into `data` folder.
 
 ### 3. Download the pre-trained models for backbone
 
-Download the following [pre-trained models](https://drive.google.com/open?id=1Q2Fg2KZV8AzNdWNjNgcavffKJBChdBgy) into `dataset/pretrained` folder. (Now we only provide models trained w/o edge)
+Download the following pre-trained models [GoogleDrive](https://drive.google.com/open?id=1Q2Fg2KZV8AzNdWNjNgcavffKJBChdBgy) | [BaiduYun](https://pan.baidu.com/s/1PayDIElnHx5XfM9IXFxH4w) (pwd: **5mv1**) into `dataset/pretrained` folder. 
 
 ### 4. Train
 
@@ -77,20 +77,17 @@ All results saliency maps will be stored under `results/run-*-sal-*` folders in 
 ### 6. Pre-trained models, pre-computed results and evaluation results
 
 We provide the pre-trained model, pre-computed saliency maps and evaluation results for:
-1. PoolNet-ResNet50 w/o edge model [run-0](https://drive.google.com/open?id=12Zgth_CP_kZPdXwnBJOu4gcTyVgV2Nof).
-2. PoolNet-ResNet50 w/ edge model (best performance) [run-1](https://drive.google.com/open?id=1sH5RKEt6SnG33Z4sI-hfLs2d21GmegwR).
-3. PoolNet-VGG16 w/ edge model (pre-computed maps) [run-2](https://drive.google.com/open?id=1jbNyNUJFZPb_jhwkm_D70gsxXgbbv_S1).
+1. PoolNet-ResNet50 w/o edge model [GoogleDrive](https://drive.google.com/open?id=12Zgth_CP_kZPdXwnBJOu4gcTyVgV2Nof) | [BaiduYun](https://pan.baidu.com/s/1m3BXHZt5PJO5lEdWF0MqBA ) (pwd: **2uln**).
+2. PoolNet-ResNet50 w/ edge model (best performance) [GoogleDrive](https://drive.google.com/open?id=1sH5RKEt6SnG33Z4sI-hfLs2d21GmegwR) | [BaiduYun](https://pan.baidu.com/s/10AXBYc_YY3FYcEbCWX6f-A) (pwd: **ksii**).
+3. PoolNet-VGG16 w/ edge model (pre-computed maps) [GoogleDrive](https://drive.google.com/open?id=1jbNyNUJFZPb_jhwkm_D70gsxXgbbv_S1) | [BaiduYun](https://pan.baidu.com/s/1gcl-BVwn1YZpaOV3XNxeBQ) (pwd: **3wgc**).
 
 Note：
 
 1. only support `bath_size=1`
 2. Except for the backbone we do not use BN layer.
 
-### 7. Wants to participate in the project?
-
-You are welcome to send us your network to make this project bigger.
-
-Please email {j04.liu, andrewhoux}@gmail.com.
+### 7. Contact
+If you have any questions, feel free to contact me via: `j04.liu(at)gmail.com`.
 
 
 ### If you think this work is helpful, please cite
@@ -100,17 +97,6 @@ Please email {j04.liu, andrewhoux}@gmail.com.
   author={Jiang-Jiang Liu and Qibin Hou and Ming-Ming Cheng and Jiashi Feng and Jianmin Jiang},
   booktitle={IEEE CVPR},
   year={2019},
-}
-```
-```latex
-@article{HouPami19Dss,
-  title={Deeply Supervised Salient Object Detection with Short Connections},
-  author={Hou, Qibin and Cheng, Ming-Ming and Hu, Xiaowei and Borji, Ali and Tu, Zhuowen and Torr, Philip},
-  year  = {2019},
-  volume={41},
-  number={4},
-  pages={815-828},
-  journal={IEEE TPAMI}
 }
 ```
 
