@@ -33,7 +33,7 @@ Download the following datasets and unzip them into `data` folder.
 
 ### 3. Download the pre-trained models for backbone
 
-Download the following pre-trained models [GoogleDrive](https://drive.google.com/open?id=1Q2Fg2KZV8AzNdWNjNgcavffKJBChdBgy) | [BaiduYun](https://pan.baidu.com/s/1PayDIElnHx5XfM9IXFxH4w) (pwd: **5mv1**) into `dataset/pretrained` folder. 
+Download the following pre-trained models [GoogleDrive](https://drive.google.com/open?id=1Q2Fg2KZV8AzNdWNjNgcavffKJBChdBgy) | [BaiduYun](https://pan.baidu.com/s/1ehZheaqeU3pyvYQfRU9c6A) (pwd: **27p5**) into `dataset/pretrained` folder. 
 
 ### 4. Train
 
